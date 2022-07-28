@@ -52,31 +52,51 @@ a {
       position: relative;
 
       &::before {
-        content: '';
-        display: 'inline-block';
+        content: "";
+        display: "inline-block";
         height: 3px;
         width: 100%;
         background-color: var(--primary-color);
         position: absolute;
         bottom: -5px;
-        left:0;
-        transform:scaleX(0);
-        transition: transform calc(var(--animation-speed)*0.3s) ease-in-out;
-
+        left: 0;
+        transform: scaleX(0);
+        transition: transform calc(var(--animation-speed) * 0.3s) ease-in-out;
       }
-      &:hover{
-        &::before{
+      &:hover {
+        &::before {
           transform: scaleX(1);
         }
       }
-      &.active{
+      &.active {
         color: var(--primary-color);
-        
+        font-weight: bold;
       }
     }
-
-
-    
+  }
+}
+.sidebar-btn {
+  height: 28px;
+  width: 35px;
+  position: relative;
+  .bar {
+    border-radius: 5px;
+    height: 6px;
+    width: 100%;
+    background-color: var(--text-color);
+    position: absolute;
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      transform-origin: right;
+      transform: scaleX(.8) translateY(-50%);
+    }
+    &:nth-child(3) {
+      top: 100%;
+      transform: translateY(-100%);
+    }
   }
 }
 
