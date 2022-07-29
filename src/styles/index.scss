@@ -85,6 +85,7 @@ a {
     height: 28px;
     width: 35px;
     position: relative;
+    display: none;
     .bar {
       border-radius: 5px;
       height: 6px;
@@ -123,7 +124,6 @@ a {
           transform: translate(0,-50%) scale(1) rotate(-45deg) ;
         }
 
-
       }
 
     }
@@ -132,4 +132,15 @@ a {
 
 .container {
   padding-inline: 15vw;
+}
+@media screen and (max-width:768px) {
+  .navbar{
+    .nav-links{
+      display:none;
+    }
+    .sidebar-btn{
+      display: block;
+    }
+  }
+  
 }
