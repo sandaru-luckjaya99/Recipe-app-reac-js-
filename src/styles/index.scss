@@ -130,6 +130,18 @@ a {
   }
 }
 
+.sidebar{
+  position: fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  width: 200px;
+  background-color: var(--background-light);
+  box-shadow: 0 0 0 1000000px rgba(0, 0, 0, 0.2) ;
+
+
+}
+
 .container {
   padding-inline: 15vw;
 }
