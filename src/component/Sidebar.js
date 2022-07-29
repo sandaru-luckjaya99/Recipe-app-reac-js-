@@ -1,7 +1,13 @@
-export default function Sidebar() {
+export default function Sidebar({ links }) {
   return (
     <div className="sidebar">
-      sidebar
+
+      {links.map((link) => (
+        <a href="#!" key={link.name}>
+          {link.name}
+        </a>
+      ))}
+
     </div>
-  )
+  );
 }
