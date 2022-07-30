@@ -68,7 +68,7 @@ a {
         bottom: -5px;
         left: 0;
         transform: scaleX(0);
-        transition: getAnimationDuration(.2s)  ease-in-out;
+        transition: getAnimationDuration(.2s)  slideInleft;
       }
       &:hover {
         &::before {
@@ -123,9 +123,7 @@ a {
         &:nth-child(3){
           transform: translate(0,-50%) scale(1) rotate(-45deg) ;
         }
-
       }
-
     }
   }
 }
@@ -138,13 +136,34 @@ a {
   width: 200px;
   background-color: var(--background-light);
   box-shadow: 0 0 0 1000000px rgba(0, 0, 0, 0.2) ;
+  animation: getAnimationDuration(.5s) slideInleft;
 
-
+  .sidebar-links{
+    display: block;
+    padding: .5em 1em;
+    border-left: .3em solid transparent;
+    margin-bottom: 1em;
+    color: var(--text-color);
+    font-size:1.1em;
+    &.active{
+      border-left-color: var(--primary-color);
+    }
+    &:hover{
+      border-left-color: var(--primary-color);
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    svg{
+      width:1.2em;
+      margin-right: .5em;
+    }
+  }
 }
 
 .container {
   padding-inline: 15vw;
 }
+
+@import "partials/animations.scss";
 @media screen and (max-width:768px) {
   .navbar{
     .nav-links{
@@ -153,6 +172,5 @@ a {
     .sidebar-btn{
       display: block;
     }
-  }
-  
+  }  
 }
