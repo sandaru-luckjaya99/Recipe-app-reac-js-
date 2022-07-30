@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Sidebar({ links }) {
+export default function Sidebar({ links , close }) {
   return (
-    <div className="sidebar">
+    <div className="sidebar" onClick={close} >
 
       {links.map((link) => (
         <a className="sidebar-links" href="#!" key={link.name}>

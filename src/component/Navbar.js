@@ -4,11 +4,14 @@ import Sidebar from "./Sidebar";
 import { faHome, faList, faCog } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
+
+    // use states const  for sidebar show && set side bar
     const [showSidebar, setshowSidebar] = useState(false);
 
+    // Arry for nav links && side bar
     const links = [
         {
-            name: "home",
+            name: "Home",
             path: "/",
             icon: faHome
         },
@@ -24,12 +27,10 @@ export default function Navbar() {
         },
     ];
 
-    // function addCount(){
-    //     setcount(Count=>Count + 1)
-    // }
-    // function deCount(){
-    //     setcount(Count=>Count - 1)
-    // }
+    // function for close side bar
+    function closeSidebar(){
+        setshowSidebar(false)
+    }
 
     return (
         <>
@@ -44,14 +45,12 @@ export default function Navbar() {
                         </a>
                     ))}
 
-                    {/* <a href="#!">Home</a>
-          <a href="#!">Reciepies</a>
-          <a href="#!">Settings</a> */}
+
                 </div>
 
                 {/* function to show or not side bar */}
                 <div
-                    onClick={() => setshowSidebar(!showSidebar)}
+                    onClick={() => setshowSidebar(true)}
                     className={showSidebar ? "sidebar-btn active" : "sidebar-btn"}
                 >
                     <div className="bar"></div>
@@ -59,7 +58,10 @@ export default function Navbar() {
                     <div className="bar"></div>
                 </div>
             </div>
-            <Sidebar links={links} />
+
+            {/* show side bar function */}
+            { showSidebar && <Sidebar close={closeSidebar} links={links}/> }
+            
         </>
     );
 }
