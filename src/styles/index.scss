@@ -11,10 +11,10 @@
 }
 
 // function for the transformation animation
-@function getAnimationDuration($duration: number){
+
+@function getAnimationDuration($duration: number) {
   @return calc($duration * var(--animation-speed));
 }
-
 
 * {
   margin: 0;
@@ -32,25 +32,66 @@ a {
 }
 
 .container {
-  padding-inline: 15vw;
+  padding-inline: 10vw;
 }
 
-.main{
+.main {
   padding-block: 3vw;
 }
 
-@import "partials/navbar-slidebar";
+.btn {
+  border: none;
+  outline: none;
+  background-color: var(--primary-color);
+  color: #fafafa;
+  padding: 0.55em 1em;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px var(--shadow-color);
+
+  &:hover {
+    box-shadow: 0 1px 3px var(--shadow-color);
+  }
+}
+
+@import "partials/navbar-slidebar.scss";
+
+.section {
+  display: flex;
+  align-items: center;
+
+  .title {
+    color: var(--text-color);
+    font-size: 3em;
+    margin-bottom: 0.25em;
+  }
+
+  .info {
+    color: var(--text-light);
+    font-size: 1em;
+    letter-spacing: 1px;
+    line-height: 1.3em;
+    margin-bottom: 1.25em;
+  }
+
+  .col {
+    width: 50%;
+  }
+}
 
 @import "partials/animations.scss";
 
-
-@media screen and (max-width:768px) {
-  .navbar{
-    .nav-links{
-      display:none;
+@media screen and (max-width: 768px) {
+  .navbar {
+    .nav-links {
+      display: none;
     }
-    .sidebar-btn{
+
+    .sidebar-btn {
       display: block;
     }
-  }  
+  }
 }
