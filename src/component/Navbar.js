@@ -41,7 +41,7 @@ export default function Navbar() {
                 <div className="nav-links">
                     {links.map((link) => (
                         <a href="#!" key={link.name}>
-                            {link.key}
+                            {link.name}
                         </a>
                     ))}
 
