@@ -35,6 +35,10 @@ a {
   padding-inline: 15vw;
 }
 
+.main{
+  padding-block: 3vw;
+}
+
 @import "partials/navbar-slidebar";
 
 @import "partials/animations.scss";
